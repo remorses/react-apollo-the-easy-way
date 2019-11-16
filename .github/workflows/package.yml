@@ -1,6 +1,5 @@
 name: Node.js Package
 
-
 on:
   push:
     branches:
@@ -16,7 +15,9 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm test
+      - run: npm i --no-save react
+
+      # - run: npm test
       - run: tsc && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
