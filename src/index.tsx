@@ -109,12 +109,10 @@ export const GraphqlProvider = ({
         )
     }, [])
     if (client) {
-
         return <ApolloProvider client={client}>{children}</ApolloProvider>
     } else {
         return <></>
     }
-
 }
 
 export type GraphqlProviderProps = Arg1<typeof GraphqlProvider>
