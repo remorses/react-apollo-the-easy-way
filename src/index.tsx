@@ -108,7 +108,13 @@ export const GraphqlProvider = ({
             })
         )
     }, [])
-    return <ApolloProvider client={client}>{children}</ApolloProvider>
+    if (client) {
+
+        return <ApolloProvider client={client}>{children}</ApolloProvider>
+    } else {
+        return <></>
+    }
+
 }
 
 export type GraphqlProviderProps = Arg1<typeof GraphqlProvider>
